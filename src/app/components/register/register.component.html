@@ -1,0 +1,56 @@
+<div id="main">
+  <h2>Registartion(using Template Driven forms)</h2>
+  <div class="container">
+    <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+      <label for="name">Name</label>
+      <input type="text" name="name" ngModel #name="ngModel" required />
+      <br>
+      <div *ngIf="name.invalid && name.touched">Name is required</div>
+      <br>
+      <label for="email">Email</label>
+      <input type="text" name="email" ngModel #email="ngModel" required />
+      <br>
+      <div *ngIf="email.invalid && email.touched">email is required</div>
+      <br>
+      <label for="fname">Password</label> 
+       <input type="password" name="password" ngModel #password="ngModel" required />
+      <br>
+      <div *ngIf="password.invalid && password.touched">password is required</div>
+      <br>
+      <label for="fname">Confirm Password</label>
+      <input type="password" name="password" ngModel #password2="ngModel" required />
+      <br>
+      <div *ngIf="password2.invalid && password2.touched">confirm password is required</div>
+      <br>
+      <input type="submit" value="Register" />
+    </form>
+  </div>
+<div>
+    <h2>Registration(using Reactive form)</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit2()">
+      
+      Name: <input type="text" formControlName="name" />
+      <br>
+      <div *ngIf="registerForm.get('name')?.invalid">Name is required</div>
+      <br>
+      <div *ngIf="registerForm.get('name')?.errors?.['minLength']">
+        Name must be at least 4 characters long.
+      </div>
+    
+      
+      Email: <input type="text" formControlName="email" required/>
+      <br>
+      <div *ngIf="registerForm.get('email')?.invalid">email is required</div>
+      <br>
+
+      Password: <input type="password" formControlName="password" />
+      <div *ngIf="registerForm.get('password')?.invalid">password is required</div>
+      <br>
+      
+      Confirm password: <input type="password" formControlName="password2" />
+      <div *ngIf="registerForm.get('password2')?.invalid">Confirm password is required</div>
+      <br>
+      <input type="submit" value="Register" />
+    </form>
+  </div>
+</div>
