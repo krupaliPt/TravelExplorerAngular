@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   slogan: string = 'Travel Explorer';
   subTitle: string = 'Travel made easy';
@@ -16,5 +16,5 @@ export class HeaderComponent implements OnInit {
   getSubTitle() {
     return this.subTitle;
   }
-}
 
+}

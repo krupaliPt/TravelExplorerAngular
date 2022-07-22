@@ -1,20 +1,20 @@
 <nav>
     <div class="navbar">
       <ul>
-      <li><a class="active" href="/">Travel Explorer</a></li>
-      <li><a  href="/gallery">Gallery</a></li>
-      <li><a href="/testimonials">Testimonials</a></li>
-      <li><a href="/contact">Contact us</a></li>
-      <li><a href="/admin">Admin</a></li>
+      <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/">Travel Explorer</a></li>
+      <li><a  routerLinkActive="active" routerLink="/gallery">Gallery</a></li>
+      <li><a routerLinkActive="active" routerLink="/testimonials">Testimonials</a></li>
+      <li><a routerLinkActive="active" routerLink="/contact">Contact us</a></li>
+      <li><a routerLinkActive="active" routerLink="/admin">Admin</a></li>
       <div class="dropdown">
         <button class="dropbtn">User
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          <a href="/login">Login</a>
-          <a href="/profile">Profile</a>
-          <a href="/favorites">Favorites</a>
-         <!-- <a href="/logout">Logout</a> -->
+          <a routerLinkActive="active" routerLink="/login">Login</a>
+          <a routerLinkActive="active" routerLink="/profile">Profile</a>
+          <a routerLinkActive="active" routerLink="/favorites">Favorites</a>
+         <!-- <a routerLinkActive="active" routerLink="/logout">Logout</a> -->
         </div>
       </div>
     </ul>
